@@ -75,13 +75,22 @@ body::-webkit-scrollbar-thumb {
         position: absolute;
         left: -120%;
         top: 40%;
-        width: 100px;
+        width: 0px;
         height: 2px;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.185);
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $primary;
+            width: 0px;
+            height: 2px;
+            animation: scrollIn 3s infinite;
+        }
+        
     }
-    &:hover span{
-        animation: scrollIn 1s  infinite;
-    }
+
     & i{
         transform: rotate(90deg);
     }

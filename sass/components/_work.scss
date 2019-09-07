@@ -43,16 +43,17 @@
     will-change: transform;
     transition: all .4s ease;
     &:hover{
-        transform: perspective(2200px) rotateY(-20deg) scale(1.01) translateX(-10px);
+        // transform: perspective(2200px) rotateY(-20deg) scale(1.01) translateX(-10px);
+        transform: scaleY(1.05);
     }
     &--1{
         width: 100%;
-        --aspect-ratio: 8/9;
+        --aspect-ratio: 8/10;
         --image: url('/images/work/1.jpg');
     }
     &--3{
         width: 100%;
-        --aspect-ratio: 8/9;
+        --aspect-ratio: 8/10;
         --image: url('/images/work/3.jpg');
     }
     &--4{
@@ -64,7 +65,7 @@
         width: 100%;
         // --aspect-ratio: 100/56;
         --aspect-ratio: 8/10;
-	    --image: url('/images/work/2.png');
+	    --image: url('/images/work/2.jpg');
     }
 }
 

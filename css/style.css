@@ -47,16 +47,22 @@ ORDER: Base + typography > general layout + grid > page layout > components
     left: 0; } }
 
 @keyframes scrollIn {
-  from {
+  0% {
+    width: 0px;
+    left: 0;
+    top: 0; }
+  20% {
+    top: 0;
+    width: 100px;
+    left: 0; }
+  40% {
+    top: 0;
+    left: 100px;
     width: 0px; }
-  to {
-    width: 100px; } }
-
-@keyframes scrollOut {
-  from {
-    width: 100px; }
-  to {
-    width: 0px; } }
+  100% {
+    width: 0px;
+    left: 0;
+    top: 0; } }
 
 @keyframes widthFull {
   from {
@@ -151,11 +157,18 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     left: -120%;
     top: 40%;
-    width: 100px;
+    width: 0px;
     height: 2px;
-    background: #fff; }
-  .me-scroll:hover span {
-    animation: scrollIn 1s  infinite; }
+    background: rgba(255, 255, 255, 0.185); }
+    .me-scroll span::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #04da81;
+      width: 0px;
+      height: 2px;
+      animation: scrollIn 3s infinite; }
   .me-scroll i {
     transform: rotate(90deg); }
 
@@ -435,7 +448,7 @@ body {
     font-size: 1.4rem;
     position: relative;
     transition: all .3s ease-out;
-    padding: 12px 4px; }
+    padding: 12px 4px 12px 18px; }
     .btn--primary::before {
       content: '';
       position: absolute;
@@ -487,14 +500,14 @@ body {
   will-change: transform;
   transition: all .4s ease; }
   .work__item__img-wrap:hover {
-    transform: perspective(2200px) rotateY(-20deg) scale(1.01) translateX(-10px); }
+    transform: scaleY(1.05); }
   .work__item__img-wrap--1 {
     width: 100%;
-    --aspect-ratio: 8/9;
+    --aspect-ratio: 8/10;
     --image: url('/images/work/1.jpg'); }
   .work__item__img-wrap--3 {
     width: 100%;
-    --aspect-ratio: 8/9;
+    --aspect-ratio: 8/10;
     --image: url('/images/work/3.jpg'); }
   .work__item__img-wrap--4 {
     width: 100%;
@@ -503,7 +516,7 @@ body {
   .work__item__img-wrap--2 {
     width: 100%;
     --aspect-ratio: 8/10;
-    --image: url('/images/work/2.png'); }
+    --image: url('/images/work/2.jpg'); }
 
 .work__item__img {
   --overflow: 40px;
