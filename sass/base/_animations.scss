@@ -1,0 +1,78 @@
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+@keyframes btnanimationIn{
+	0%{
+		width: 40px;
+		left: 0;
+	}
+	40%{
+		width: 100%;
+		left: 0;
+	}
+	100%{
+        left: 82.5%;
+		width: 40px;
+	}
+}
+@keyframes btnanimationOut{
+	0%{
+		width: 40px;
+        left: 82.5%;
+	}
+	40%{
+		width: 100%;
+		left: 0;
+	}
+	100%{
+		width: 40px;
+		left: 0;
+	}
+}
+@keyframes scrollIn{
+	from{
+		width: 0px;
+	}
+	to{
+		width: 100px;
+	}
+}
+@keyframes scrollOut{
+	from{
+		width: 100px;
+	}
+	to{
+		width: 0px;
+	}
+}
+@keyframes widthFull{
+	from{
+		width: 0px;
+	}
+	to{
+		width: 100vw;
+	}
+}
+@keyframes heightFull{
+	from{
+		height: 0px;
+	}
+	to{
+		height: 200px;
+	}
+}
+.widthFull {
+	-webkit-animation-name: widthFull;
+	animation-name: widthFull;
+	-webkit-transform-origin: left;
+	transform-origin: left;
+}
+.heightFull {
+	-webkit-animation-name: heightFull;
+	animation-name: heightFull;
+	-webkit-transform-origin: bottom;
+	transform-origin: bottom;
+}

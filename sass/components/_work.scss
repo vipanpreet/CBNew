@@ -1,0 +1,110 @@
+
+.work-container {
+	
+	position: relative;
+	// padding: 12rem 0;
+	counter-reset: figure; 
+}
+
+.work__item {
+	margin: 10vh auto;
+	max-width: 100%;
+	position: relative;
+	will-change: transform;
+}
+
+.work__item--number {
+    position: absolute;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba($font-light,.2);
+    &--1{
+        top: -160px;
+        right:  0;
+    }
+    &--2{
+        top: -160px;
+        left:  0;
+    }
+}
+
+.work__item:nth-child(even)::before {
+	right: 0;
+}
+
+.work__item__img-wrap {
+	--aspect-ratio: 1/1.5;
+	overflow: hidden;
+	width: 500px;
+	margin: 0 auto;
+	padding-bottom: calc(100% / (var(--aspect-ratio)));
+	max-width: calc(100% - 2rem);
+    background-position: cover;
+    will-change: transform;
+    transition: all .4s ease;
+    &:hover{
+        transform: perspective(2200px) rotateY(-20deg) scale(1.01) translateX(-10px);
+    }
+    &--1{
+        width: 100%;
+        --aspect-ratio: 8/9;
+        --image: url('/images/work/1.jpg');
+    }
+    &--3{
+        width: 100%;
+        --aspect-ratio: 8/9;
+        --image: url('/images/work/3.jpg');
+    }
+    &--4{
+        width: 100%;
+        --aspect-ratio: 8/10;
+        --image: url('/images/work/4.jpg');
+    }
+    &--2{
+        width: 100%;
+        // --aspect-ratio: 100/56;
+        --aspect-ratio: 8/10;
+	    --image: url('/images/work/2.png');
+    }
+}
+
+.work__item__img {
+	--overflow: 40px;
+	height: calc(100% + (2 * var(--overflow)));
+	top: calc( -1 * var(--overflow));
+	width: 100%;
+	position: absolute;
+	background-image: var(--image);
+	background-size: cover;
+	background-position: 50% 0%;
+	will-change: transform;
+}
+
+.work__item__img--t1 {
+	--overflow: 60px;
+}
+
+.work__item__img--t2 {
+	--overflow: 80px;
+}
+
+.work__item__img--t3 {
+	--overflow: 120px;
+}
+
+.work__item__caption {
+    position: absolute;
+    bottom: 60px;
+    right: -30px;
+    padding: 1rem;
+    background: rgba($white,.5);
+}
+
+.work__item__caption-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #222;
+}
+
